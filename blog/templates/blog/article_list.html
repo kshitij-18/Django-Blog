@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+
+{% if articles %}
+<br>
+{% for article in articles %}
+<h1>{{ article.title }}</h1>
+<br>
+<p>{{ article.description }}</p>
+<br>
+<img src="{{ article.article_image.url }}" alt="" style="width: 250px; height: 250px">
+<hr>
+
+
+{% endfor %}
+
+{% else %}
+<h1>Please post something</h1>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+
+{% if articles %}
+<h1><strong>Blog Posts by {{ username }}</strong></h1>
+<br>
+{% for article in articles %}
+<h1>{{ article.title }}</h1>
+<br>
+<p>{{ article.description }}</p>
+<br>
+<img src="{{ article.article_image.url }}" alt="" style="width: 250px; height: 250px">
+<hr>
+
+{% endfor %}
+<p class="text-muted"><strong>Note:</strong>This page only shows the public blog posts of {{ username }}</p>
+{% else %}
+<h1>The user has not posted anything yet</h1>
+{% endif %}
+
+{% endblock content %}
